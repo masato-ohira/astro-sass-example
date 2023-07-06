@@ -1,6 +1,7 @@
 ---
-import { MyMarkdown } from '@/components/ui/MyMarkdown'
 import type { SpotType as Props } from './spot.types'
+import { md } from '@/utils/md'
+
 const { spot } = Astro.props
 const spotImage = `https://picsum.photos/id/${Number(spot.id) + 10}/1600/900`
 ---
@@ -14,10 +15,11 @@ const spotImage = `https://picsum.photos/id/${Number(spot.id) + 10}/1600/900`
     </div>
 
     <div class='content'>
-      <MyMarkdown content={spot.body as string} />
-      <div class='buttons is-centered'>
-        <a href='/' class='button is-medium is-rounded'>一覧に戻る</a>
-      </div>
+      {md.render(spot.body as string)}
+    </div>
+
+    <div class='buttons is-centered'>
+      <a href='/' class='button is-medium is-rounded'>一覧に戻る</a>
     </div>
   </div>
 </div>
