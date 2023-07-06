@@ -15,7 +15,7 @@ export function getStaticPaths() {
 const { id } = Astro.params
 const entry = find(spotsJson, (i) => i.id == id)
 const meta = {
-  title: entry?.title as string,
+  title: `${entry?.title} | DemoSite`,
   description: entry?.lead,
 }
 ---

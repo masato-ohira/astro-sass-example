@@ -3,7 +3,8 @@ import type { SpotType as Props } from './spot.types'
 import { md } from '@/utils/md'
 
 const { spot } = Astro.props
-const spotImage = `https://picsum.photos/id/${Number(spot.id) + 10}/1600/900`
+const spotImage = `/static/img/spots/mv-${spot.id}.jpg`
+const spotBody = md.render(spot.body as string)
 ---
 
 <div class='c-spot-detail'>
@@ -11,12 +12,12 @@ const spotImage = `https://picsum.photos/id/${Number(spot.id) + 10}/1600/900`
     <div class='title is-1'>{spot.title}</div>
 
     <div class='c-spot-detail__img'>
-      <img src={spotImage} alt='' />
+      <div class='box'>
+        <img src={spotImage} alt='' />
+      </div>
     </div>
 
-    <div class='content'>
-      {md.render(spot.body as string)}
-    </div>
+    <div class='content' set:html={spotBody} />
 
     <div class='buttons is-centered'>
       <a href='/' class='button is-medium is-rounded'>一覧に戻る</a>

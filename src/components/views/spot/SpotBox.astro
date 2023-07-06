@@ -4,7 +4,7 @@ import type { SpotType as Props } from './spot.types'
 import '@/styles/app.scss'
 
 const { spot } = Astro.props
-const spotImage = `https://picsum.photos/id/${Number(spot.id) + 10}/800/600`
+const spotImage = `/static/img/spots/thum-${spot.id}.jpg`
 ---
 
 <div class='c-spot-box box'>
