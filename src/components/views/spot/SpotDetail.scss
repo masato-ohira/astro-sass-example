@@ -19,10 +19,12 @@
     margin-top: 40px;
   }
 
-  .content {
+  &__content {
     h2 {
+      color: vars.$link !important;
       @include fonts.rem(24);
-      color: vars.$link;
+      font-weight: 500;
+      margin-top: 30px;
     }
   }
 }

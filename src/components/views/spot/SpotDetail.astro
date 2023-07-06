@@ -17,7 +17,9 @@ const spotBody = md.render(spot.body as string)
       </div>
     </div>
 
-    <div class='content' set:html={spotBody} />
+    <div class='content'>
+      <div class='c-spot-detail__content' set:html={spotBody} />
+    </div>
 
     <div class='buttons is-centered'>
       <a href='/' class='button is-medium is-rounded'>一覧に戻る</a>
@@ -25,6 +27,6 @@ const spotBody = md.render(spot.body as string)
   </div>
 </div>
 
-<style lang='scss'>
+<style lang='scss' is:global>
   @import './SpotDetail.scss';
 </style>
