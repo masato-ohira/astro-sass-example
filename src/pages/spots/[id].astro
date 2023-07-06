@@ -1,0 +1,27 @@
+---
+import { find } from 'lodash-es'
+import spotsJson from '@/json/spots.json'
+import Layout from '@/layouts/Layout.astro'
+import SpotDetail from '@/components/views/spot/SpotDetail.astro'
+
+export function getStaticPaths() {
+  return spotsJson.map((i) => {
+    return {
+      params: { id: i.id },
+    }
+  })
+}
+
+const { id } = Astro.params
+const entry = find(spotsJson, (i) => i.id == id)
+const meta = {
+  title: entry?.title as string,
+  description: entry?.lead,
+}
+---
+
+<Layout meta={meta}>
+  <main>
+    {entry && <SpotDetail spot={entry} />}
+  </main>
+</Layout>

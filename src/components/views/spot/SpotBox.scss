@@ -1,0 +1,40 @@
+@use '@/styles/vars';
+@use '@/styles/mixins/fonts';
+
+.c-spot-box {
+  &.box {
+    margin: 0;
+
+    &:hover {
+      transition-property: all;
+      transition-duration: 0.2s;
+      transition-timing-function: linear;
+      background-color: #eee;
+    }
+  }
+
+  a {
+    display: block;
+    color: vars.$text;
+  }
+
+  &__img {
+    :is(img) {
+      object-fit: cover;
+      aspect-ratio: 16/9;
+      display: block;
+    }
+  }
+
+  &__content {
+    margin-top: 15px;
+    :is(h2) {
+      font-weight: bold;
+    }
+
+    :is(dl) {
+      margin-top: 5px;
+      @include fonts.rem(14);
+    }
+  }
+}

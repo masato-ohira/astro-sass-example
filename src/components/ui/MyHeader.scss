@@ -1,0 +1,40 @@
+@use '@/styles/vars';
+@use '@/styles/mixins/fonts';
+
+.c-my-header {
+  border-bottom: 1px solid rgba(#000, 0.07);
+
+  .hero-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 12px;
+    @include fonts.rem(28);
+    font-weight: bold;
+
+    .logo-icon {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      color: vars.$link;
+      font-size: 40px;
+    }
+
+    a {
+      display: block;
+      color: vars.$text;
+    }
+  }
+
+  &__menu {
+    color: vars.$link;
+    @include fonts.rem(24);
+  }
+}

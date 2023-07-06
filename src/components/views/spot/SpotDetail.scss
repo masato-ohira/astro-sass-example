@@ -1,0 +1,28 @@
+@use '@/styles/mixins/fonts';
+@use '@/styles/vars';
+
+.c-spot-detail {
+  .title.is-1 {
+    @include fonts.rem(36);
+    border-bottom: 1px solid rgba(#000, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+
+  &__img {
+    // max-width: 960px;
+    // margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .buttons {
+    margin-top: 40px;
+  }
+
+  .content {
+    h2 {
+      @include fonts.rem(24);
+      color: vars.$link;
+    }
+  }
+}

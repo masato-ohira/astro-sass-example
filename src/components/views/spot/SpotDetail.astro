@@ -1,0 +1,27 @@
+---
+import { MyMarkdown } from '@/components/ui/MyMarkdown'
+import type { SpotType as Props } from './spot.types'
+const { spot } = Astro.props
+const spotImage = `https://picsum.photos/id/${Number(spot.id) + 10}/1600/900`
+---
+
+<div class='c-spot-detail'>
+  <div class='container py-6'>
+    <div class='title is-1'>{spot.title}</div>
+
+    <div class='c-spot-detail__img'>
+      <img src={spotImage} alt='' />
+    </div>
+
+    <div class='content'>
+      <MyMarkdown content={spot.body as string} />
+      <div class='buttons is-centered'>
+        <a href='/' class='button is-medium is-rounded'>一覧に戻る</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang='scss'>
+  @import './SpotDetail.scss';
+</style>

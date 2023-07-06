@@ -1,0 +1,9 @@
+@use '@/styles/vars' as *;
+@import '@/styles/libs/bulma';
+
+html,
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+  color: #222;
+}

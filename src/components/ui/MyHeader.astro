@@ -1,0 +1,26 @@
+---
+import { MyIcon } from '@/components/icons/MyIcon'
+---
+
+<div class='c-my-header'>
+  <div class='hero is-small'>
+    <div class='hero-body'>
+      <div class='c-my-header__logo'>
+        <div class='logo-icon'>
+          <MyIcon name={'react'} />
+        </div>
+        <h1>
+          <a href='/'> MySiteName</a>
+        </h1>
+      </div>
+
+      <div class='c-my-header__menu'>
+        <MyIcon name={'menu'} />
+      </div>
+    </div>
+  </div>
+
+  <style lang='scss'>
+    @import './MyHeader.scss';
+  </style>
+</div>

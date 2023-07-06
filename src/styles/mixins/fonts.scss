@@ -1,0 +1,23 @@
+// font-family
+// ------------------------------
+@mixin sans {
+  font-family: 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+}
+@mixin serif {
+  font-family: 'Shippori Mincho', serif;
+}
+// font-style
+// ------------------------------
+@mixin letter($size: 1) {
+  font-feature-settings: 'palt' $size, 'jp90';
+
+  .safari & {
+    font-feature-settings: 'pkna' 1;
+  }
+  // font-size
+  // ------------------------------
+}
+@mixin rem($size: 16) {
+  $ratio: 0.625;
+  font-size: $size * 0.1 * $ratio * 1rem;
+}
